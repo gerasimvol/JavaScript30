@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
   <title>Drums</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
@@ -13,7 +12,6 @@
 </head>
 
 <body>
-
   <div class="container">
     <div class="key" data-key="65">
       <div class="name">A</div>
@@ -63,34 +61,6 @@
   <audio src="sounds/tink.wav" data-key="75"></audio>
   <audio src="sounds/tom.wav" data-key="76"></audio>
 
-
-  <script>
-    let app = document.body
-
-    app.addEventListener("keydown", keyDown, false)
-    app.addEventListener("keyup", keyUp, false)
-
-    function keyDown(e) {
-      let keyCode = e.keyCode
-      let key = document.querySelector(`.key[data-key="${keyCode}"]`)
-      let audio = document.querySelector(`audio[data-key="${keyCode}"]`)
-      if(!audio || !key) return
-      
-      key.classList.add("pressed")
-      audio.currentTime = 0
-      audio.play()
-    }
-
-    function keyUp(e) {
-      let keyCode = e.keyCode
-      let key = document.querySelector(`.key[data-key="${keyCode}"]`)
-      let audio = document.querySelector(`audio[data-key="${keyCode}"]`)
-      if(!audio || !key) return
-
-      key.classList.remove("pressed")
-      // let sound = document.querySelector(`audio[data-key="${keyCode}"]`)
-    }
-
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
