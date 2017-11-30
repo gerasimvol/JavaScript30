@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Drums</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="key" data-key="65">
+      <div class="name">A</div>
+      <div class="sound">boom</div>
+    </div>
+    <div class="key" data-key="83">
+      <div class="name">S</div>
+      <div class="sound">clap</div>
+    </div>
+    <div class="key" data-key="68">
+      <div class="name">D</div>
+      <div class="sound">hihat</div>
+    </div>
+    <div class="key" data-key="70">
+      <div class="name">F</div>
+      <div class="sound">kick</div>
+    </div>
+    <div class="key" data-key="71">
+      <div class="name">G</div>
+      <div class="sound">openhat</div>
+    </div>
+    <div class="key" data-key="72">
+      <div class="name">H</div>
+      <div class="sound">ride</div>
+    </div>
+    <div class="key" data-key="74">
+      <div class="name">J</div>
+      <div class="sound">snare</div>
+    </div>
+    <div class="key" data-key="75">
+      <div class="name">K</div>
+      <div class="sound">tink</div>
+    </div>
+    <div class="key" data-key="76">
+      <div class="name">L</div>
+      <div class="sound">tom</div>
+    </div>
+  </div>
+
+  <audio src="sounds/boom.wav" data-key="65"></audio>
+  <audio src="sounds/clap.wav" data-key="83"></audio>
+  <audio src="sounds/hihat.wav" data-key="68"></audio>
+  <audio src="sounds/kick.wav" data-key="70"></audio>
+  <audio src="sounds/openhat.wav" data-key="71"></audio>
+  <audio src="sounds/ride.wav" data-key="72"></audio>
+  <audio src="sounds/snare.wav" data-key="74"></audio>
+  <audio src="sounds/tink.wav" data-key="75"></audio>
+  <audio src="sounds/tom.wav" data-key="76"></audio>
+
+
+  <script>
+    let app = document.body
+
+    app.addEventListener("keydown", keyDown, false)
+    app.addEventListener("keyup", keyUp, false)
+
+    function keyDown(e) {
+      let keyCode = e.keyCode
+      let key = document.querySelector(`.key[data-key="${keyCode}"]`)
+      let audio = document.querySelector(`audio[data-key="${keyCode}"]`)
+      if(!audio || !key) return
+      
+      key.classList.add("pressed")
+      audio.currentTime = 0
+      audio.play()
+    }
+
+    function keyUp(e) {
+      let keyCode = e.keyCode
+      let key = document.querySelector(`.key[data-key="${keyCode}"]`)
+      let audio = document.querySelector(`audio[data-key="${keyCode}"]`)
+      if(!audio || !key) return
+
+      key.classList.remove("pressed")
+      // let sound = document.querySelector(`audio[data-key="${keyCode}"]`)
+    }
+
+  </script>
+</body>
+</html>
