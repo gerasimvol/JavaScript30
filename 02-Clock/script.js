@@ -4,7 +4,6 @@ let hourHand = document.querySelector('.hour-hand')
 let minuteHand = document.querySelector('.min-hand')
 let secondHand = document.querySelector('.second-hand')
 
-
 function tik() {
   let time = new Date()
   let sec = time.getSeconds()
@@ -19,4 +18,3 @@ function tik() {
   minuteHand.style.transform = `rotate(${minDeg}deg)`
   hourHand.style.transform = `rotate(${hourDeg}deg)`
 }
-
