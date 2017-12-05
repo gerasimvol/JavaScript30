@@ -12,7 +12,14 @@ function tik() {
 
   let secDeg = sec*6
   let minDeg = (min*6) + (sec*0.1)
-  let hourDeg = (hour*12) + (min*0.1)
+  let hourDeg = (hour*30) + (min*0.1)
+
+  if(sec == 0) {
+    secondHand.style.transition = `none`
+  } else {
+    secondHand.style.transition = `all 0.15s`
+    secondHand.style.transitionTimingFunction = `cubic-bezier(0.1, 2.7, 0.58, 1)`
+  }
 
   secondHand.style.transform = `rotate(${secDeg}deg)`
   minuteHand.style.transform = `rotate(${minDeg}deg)`
