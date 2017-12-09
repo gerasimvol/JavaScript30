@@ -23,6 +23,7 @@ body {
   margin: 50px auto;
   position: relative;
   padding: 2rem;
+  overflow: hidden;
 }
 
 .clock-face {
