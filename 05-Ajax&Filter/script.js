@@ -4,12 +4,13 @@ const cities = []
 
 fetch(endpoint)
   .then(res => res.json())
-  .then(data => cities.push(...data))
+  .then(data => {
+    cities.push(...data)
+    search.addEventListener('input', displayMatches)
+  })
 
 const search = document.querySelector('.search')
 const result = document.querySelector('.result')
-
-search.addEventListener('input', displayMatches)
 
 // FUNCTIONS
 function findMatches(word) {
