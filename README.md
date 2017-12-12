@@ -7,3 +7,4 @@ Live demos:
 - 03-CssVariables http://gerasim-cssvar.surge.sh
 - 04-FlexGalery http://gerasim-flexgalery.surge.sh
 - 05-Ajax&Filter http://gerasim-filter.surge.sh
+- 06-Canvas http://gerasim-canvas.surge.sh
