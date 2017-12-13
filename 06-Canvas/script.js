@@ -31,14 +31,14 @@ function draw(e) {
   // move to
   !isTouchDevice() 
     ? ctx.lineTo(e.offsetX, e.offsetY) 
-    : ctx.lineTo(e.targetTouches[0].pageX, e.targetTouches[0].pageY)
+    : ctx.lineTo(e.targetTouches[0].clientX, e.targetTouches[0].clientY)
   // connect
   ctx.stroke()
 
   // update new X, Y
   !isTouchDevice()
     ? [startX, startY] = [e.offsetX, e.offsetY]
-    : [startX, startY] = [e.targetTouches[0].pageX, e.targetTouches[0].pageY]
+    : [startX, startY] = [e.targetTouches[0].clientX, e.targetTouches[0].clientY]
 
   // change color
   lineColor++
@@ -69,7 +69,7 @@ canvas.addEventListener('mouseout', () => { isDrawing = false })
 canvas.addEventListener('touchmove', draw)
 canvas.addEventListener('touchstart', (e) => { 
   isDrawing = true 
-  startX = e.targetTouches[0].pageX
-  startY = e.targetTouches[0].pageY
+  startX = e.targetTouches[0].clientX
+  startY = e.targetTouches[0].clientY
 })
 canvas.addEventListener('touchend', () => { isDrawing = false })
