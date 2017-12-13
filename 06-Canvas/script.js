@@ -1,3 +1,7 @@
+function isTouchDevice(){
+  return typeof window.ontouchstart !== 'undefined';
+}
+
 const canvas = document.querySelector('#draw')
 const ctx = canvas.getContext('2d')
 
@@ -18,29 +22,40 @@ ctx.lineWidth = 10
 function draw(e) {
   if (!isDrawing) return
 
+  // set color
   ctx.strokeStyle = `hsl(${lineColor}, 100%, 50%)`
+  // hey canvas, we start dwar
   ctx.beginPath()
   // start from
   ctx.moveTo(startX, startY)
   // move to
-  ctx.lineTo(e.offsetX, e.offsetY)
+  !isTouchDevice() 
+    ? ctx.lineTo(e.offsetX, e.offsetY) 
+    : ctx.lineTo(e.targetTouches[0].pageX, e.targetTouches[0].pageY)
+  // connect
   ctx.stroke()
 
-  startX = e.offsetX
-  startY = e.offsetY
+  // update new X, Y
+  !isTouchDevice()
+    ? [startX, startY] = [e.offsetX, e.offsetY]
+    : [startX, startY] = [e.targetTouches[0].pageX, e.targetTouches[0].pageY]
 
+  // change color
   lineColor++
   if (lineColor >= 360) {
     lineColor = 0
   }
 
+  // change width
   if(ctx.lineWidth >= 20 || ctx.lineWidth < 10) {
     isGrowingWidth = !isGrowingWidth
   }
 
+  // change grow width or reduce
   isGrowingWidth ? ctx.lineWidth++ : ctx.lineWidth--
 }
 
+// mouse
 canvas.addEventListener('mousemove', draw)
 canvas.addEventListener('mousedown', (e) => { 
   isDrawing = true 
@@ -49,3 +64,12 @@ canvas.addEventListener('mousedown', (e) => {
 })
 canvas.addEventListener('mouseup', () => { isDrawing = false })
 canvas.addEventListener('mouseout', () => { isDrawing = false })
+
+// touch
+canvas.addEventListener('touchmove', draw)
+canvas.addEventListener('touchstart', (e) => { 
+  isDrawing = true 
+  startX = e.targetTouches[0].pageX
+  startY = e.targetTouches[0].pageY
+})
+canvas.addEventListener('touchend', () => { isDrawing = false })
