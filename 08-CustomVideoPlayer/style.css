@@ -1,5 +1,6 @@
 :root {
-  --activeColor: #43A047;
+  --activeColor: #D50000;
+  --bgColor: #212121;
 }
 
 * {
@@ -7,6 +8,11 @@
   transition: all 0.4s;
   margin: 0;
   padding: 0;
+  color: white;
+}
+
+body {
+  background: linear-gradient(to right, rgb(120, 2, 6), rgb(6, 17, 97));
 }
 
 .player {
@@ -15,21 +21,26 @@
   position: relative;
   overflow: hidden;
   margin: 20px auto;
+  border: 1px solid var(--bgColor);
 }
 
 .player:hover .progress {
-  height: 15px;
+  height: 10px;
 }
 
 .player:hover .player__controls {
   transform: translateY(0);
 }
 
+.player__video {
+  width: 100%;
+}
+
 .player__controls {
   position: absolute;
   width: 100%;
   bottom: 0;
-  transform: translateY(31px);
+  transform: translateY(calc(100% - 5px));
 }
 
 .progress {
@@ -38,7 +49,8 @@
 
 .progress__filled {
   height: 100%;
-  width: 70%;
+  width: 0%;
+  transition: none;
   background: var(--activeColor);
 
 }
@@ -46,11 +58,134 @@
 .buttons {
   display: flex;
   justify-content: space-between;
-  padding: 5px;
+  padding: 5px 10px;
+  background: var(--bgColor);
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 0.9em;
+  outline: none;
+  cursor: pointer;
+}
+
+.button_skip {
+  display: flex;
+  align-items: center;
 }
 
 .progress,
-.player__button,
 .player__slider {
   cursor: pointer;
+}
+
+.volume-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.volume-icon {
+  height: 23px;
+  margin-right: 5px;
+}
+
+.speed-icon {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.speed-icon svg {
+  height: 21px;
+  width: 21px;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 150px;
+  background: var(--bgColor);
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #FFFFFF;
+  border-radius: 0px;
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #FFFFFF;
+  height: 13px;
+  width: 13px;
+  border-radius: 25px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #FFFFFF;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #FFFFFF;
+  border-radius: 0px;
+  border: 0px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #FFFFFF;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #FFFFFF;
+  border: 0px solid #000000;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #FFFFFF;
+  border: 0px solid #000000;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #FFFFFF;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #FFFFFF;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #FFFFFF;
 }
