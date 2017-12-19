@@ -10,3 +10,4 @@ Live demos:
 - 06-Canvas draw http://gerasim-canvas.surge.sh
 - 07-Multiple Checkboxes with SHIFT http://gerasim-checkboxes.surge.sh
 - 08-Custom video player http://gerasim-player.surge.sh
+- 09-Secret code http://gerasim-secret.surge.sh
