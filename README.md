@@ -11,4 +11,4 @@ Live demos:
 - 07-Multiple Checkboxes with SHIFT http://gerasim-checkboxes.surge.sh
 - 08-Custom video player http://gerasim-player.surge.sh
 - 09-Secret code http://gerasim-secret.surge.sh
-- 10-Animate images on scroll http://gerasim-imagesscroll.surge.sh
+- 10-Animate images on scroll http://gerasim-imagescroll.surge.sh
