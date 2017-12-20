@@ -1,4 +1,4 @@
-### Tiny JS app created using pure JS, CSS and HTML🔥
+### Tiny JS app created using pure JS, CSS and HTML 🔥
 ##### No Frameworks, No Compilers, No Libraries <br/>
 ###### thanks for chalanges https://twitter.com/wesbos
 
