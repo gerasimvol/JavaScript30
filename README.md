@@ -1,6 +1,6 @@
-### Tiny JS app created using pure JS, CSS and HTML
-No Frameworks, No Compilers, No Libraries
-thanks for chalanges https://twitter.com/wesbos
+### Tiny JS app created using pure JS, CSS and HTML🔥
+##### No Frameworks, No Compilers, No Libraries <br/>
+###### thanks for chalanges https://twitter.com/wesbos
 
 Live demos:
 - 01-Drums http://gerasim-drums.surge.sh
