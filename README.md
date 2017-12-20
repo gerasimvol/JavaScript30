@@ -1,5 +1,6 @@
-### JavaScript30
-JavaScript apps using only ES6
+### Tiny JS app created using pure JS, CSS and HTML 🔥
+##### No Frameworks, No Compilers, No Libraries <br/>
+###### thanks for chalanges https://twitter.com/wesbos
 
 Live demos:
 - 01-Drums http://gerasim-drums.surge.sh
@@ -12,4 +13,5 @@ Live demos:
 - 08-Custom video player http://gerasim-player.surge.sh
 - 09-Secret code http://gerasim-secret.surge.sh
 - 10-Animate images on scroll http://gerasim-imagescroll.surge.sh
-- 11-Pupe JS todo list http://gerasim-todo.surge.sh
+- 11-Todo list http://gerasim-todo.surge.sh
+- 12-Dynamic shadow with mouse and gyroscope http://gerasim-shadow.surge.sh
