@@ -12,3 +12,4 @@ Live demos:
 - 08-Custom video player http://gerasim-player.surge.sh
 - 09-Secret code http://gerasim-secret.surge.sh
 - 10-Animate images on scroll http://gerasim-imagescroll.surge.sh
+- 11-Pupe JS todo list http://gerasim-todo.surge.sh

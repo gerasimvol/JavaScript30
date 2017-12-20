@@ -1,4 +1,8 @@
 
+    :root {
+      --border-radius: 5px;
+    }
+    
     html {
       box-sizing: border-box;
       background: #01579B;
@@ -8,7 +12,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      font-family: 'Gloria Hallelujah', cursive;
+      font-family: 'Kalam', cursive;
     }
     *, *:before, *:after {box-sizing: inherit; }
 
@@ -17,12 +21,13 @@
       background: rgba(255,255,255,0.95);
       box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
       width: 300px;
+      border-radius: var(--border-radius);
     }
 
     h2 {
       text-align: center;
       margin: 0;
-      font-weight: 200;
+      font-weight: bold;
     }
 
     .items {
@@ -35,8 +40,8 @@
     .items li {
       border-bottom: 1px solid rgba(0,0,0,0.2);
       padding: 10px 0;
-      font-weight: 100;
       display: flex;
+      font-weight: bold;
     }
 
     .items label {
@@ -50,7 +55,7 @@
     }
 
     .items input + label:before {
-      content: '⬜️';
+      content: '🔲';
       margin-right: 10px;
     }
 
@@ -68,7 +73,8 @@
       padding:10px;
       outline:0;
       border:1px solid rgba(0,0,0,0.1);
-      font-family: 'Gloria Hallelujah', cursive;
+      font-family: 'Kalam', cursive;
+      border-radius: var(--border-radius);
     }
 
     .add-items input[name="item"] {
@@ -78,4 +84,21 @@
 
     .add-items input[type="submit"] {
       cursor: pointer;
+      color: white;
+      font-weight: bold;
+      background: #43A047;
+      padding: 4px 15px 0;
+    }
+
+    .delete-icon {
+      color: #D50000;
+      width: 16px;
+      height: 16px;
+      margin-top: 3px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .delete-icon:hover {
+      transform: scale(1.5);
     }
