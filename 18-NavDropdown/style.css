@@ -67,8 +67,6 @@ nav ul {
   opacity: 1;
 }
 
-
-
 .dropdownBackground {
   width:100px;
   height:100px;
@@ -76,7 +74,7 @@ nav ul {
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
-  transition:all 0.3s, opacity 0.1s, transform 0.2s;
+  transition:all 0.2s linear, opacity 0.1s;
   transform-origin: 50% 0;
   display: flex;
   justify-content: center;
@@ -93,7 +91,8 @@ nav ul {
   height:20px;
   display: block;
   background:white;
-  transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-45%) rotate(45deg);
+  border-radius: 3px;
 }
 
 .bio {
@@ -130,6 +129,10 @@ a.button {
   padding:10px;
   color:white;
   margin-bottom: 10px;
+}
+
+img {
+  border-radius: 5px;
 }
 
 .button[href*=twitter] { background: #019FE9; }
