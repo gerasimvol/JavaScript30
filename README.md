@@ -16,3 +16,5 @@ Live demos:
 - 11-Todo list http://gerasim-todo.surge.sh
 - 12-Dynamic shadow with mouse and gyroscope http://gerasim-shadow.surge.sh
 - 14-WebCam fun https://gerasim-webcam.surge.sh
+- 15-Native browser speach recognition https://gerasim-speach.surge.sh
+- 16-Hover links https://gerasim-links.surge.sh
